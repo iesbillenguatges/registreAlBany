@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>Registre Bany Institut</title>
+
+<style>
+body{
+font-family: Arial;
+max-width:600px;
+margin:auto;
+padding:30px;
+}
+
+input,button{
+padding:10px;
+font-size:16px;
+margin-top:10px;
+}
+
+#xmlOutput{
+margin-top:20px;
+background:#f4f4f4;
+padding:10px;
+white-space:pre;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Registre d'eixida al bany</h2>
+
+<label>NIA (8 dígits)</label><br>
+<input type="text" id="nia" maxlength="8">
+
+<br>
+
+<button onclick="registrar()">Registrar</button>
+<button onclick="descarregar()">Descarregar XML</button>
+
+<h3>XML</h3>
+
+<pre id="xmlOutput"></pre>
+
+<script>
+
+function validarNIA(nia){
+return /^[0-9]{8}$/.test(nia);
+}
+
+/* carregar XML si existeix */
+
+let xml = localStorage.getItem("xmlBany");
+
+if(!xml){
+xml = `<?xml version="1.0" encoding="UTF-8"?>
+<registres>
+</registres>`;
+}
+
+actualitzarPantalla();
+
+function registrar(){
+
+let nia = document.getElementById("nia").value;
+
+if(!validarNIA(nia)){
+alert("NIA incorrecte (8 digits)");
+return;
+}
+
+let ara = new Date();
+let data = ara.toISOString().split("T")[0];
+let hora = ara.toTimeString().split(" ")[0];
+
+let registre = `
+  <registre>
+    <nia>${nia}</nia>
+    <data>${data}</data>
+    <hora>${hora}</hora>
+  </registre>
+`;
+
+xml = xml.replace("</registres>", registre + "\n</registres>");
+
+localStorage.setItem("xmlBany", xml);
+
+actualitzarPantalla();
+
+document.getElementById("nia").value="";
+
+}
+
+function actualitzarPantalla(){
+document.getElementById("xmlOutput").textContent = xml;
+}
+
+function descarregar(){
+
+let blob = new Blob([xml], {type:"text/xml"});
+
+let a = document.createElement("a");
+a.href = URL.createObjectURL(blob);
+a.download = "bany.xml";
+a.click();
+
+}
+
+</script>
+
+</body>
+</html>
