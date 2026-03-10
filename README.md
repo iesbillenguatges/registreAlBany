@@ -188,31 +188,25 @@ Això provoca la descàrrega del fitxer:
 bany.xml
 
 # **10. Exemple de XML generat**
+```
 <?xml version="1.0" encoding="UTF-8"?>
 
 <registres>
 
-`  `<registre>
+  <registre>
+    <nia>12345678</nia>
+    <data>2026-03-10</data>
+    <hora>11:42:15</hora>
+  </registre>
 
-`    `<nia>12345678</nia>
-
-`    `<data>2026-03-10</data>
-
-`    `<hora>11:42:15</hora>
-
-`  `</registre>
-
-`  `<registre>
-
-`    `<nia>87654321</nia>
-
-`    `<data>2026-03-10</data>
-
-`    `<hora>12:05:44</hora>
-
-`  `</registre>
+  <registre>
+    <nia>87654321</nia>
+    <data>2026-03-10</data>
+    <hora>12:05:44</hora>
+  </registre>
 
 </registres>
+```
 
 # **11. Avantatges d'aquest sistema**
 ✔ funciona sense servidor\
@@ -232,6 +226,7 @@ Es podria ampliar amb:
 
 # **Conclusió**
 Aquesta aplicació és un exemple senzill de **generació i manipulació de XML des d'una aplicació web amb JavaScript**, utilitzant el navegador com a sistema d'emmagatzematge temporal mitjançant **localStorage**.
+
 
 
 
