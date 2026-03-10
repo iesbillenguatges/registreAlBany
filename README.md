@@ -121,18 +121,15 @@ El procés és:
 let nia = document.getElementById("nia").value;
 
 ## **5.2 Generar data i hora**
+```
 let ara = new Date();
-
 let data = ara.toISOString().split("T")[0];
-
 let hora = ara.toTimeString().split(" ")[0];
 
 Exemple:
-
 data = 2026-03-10
-
 hora = 11:42:15
-
+```
 ## **5.3 Crear el registre XML**
 let registre = `
 
@@ -248,4 +245,5 @@ Es podria ampliar amb:
 
 # **Conclusió**
 Aquesta aplicació és un exemple senzill de **generació i manipulació de XML des d'una aplicació web amb JavaScript**, utilitzant el navegador com a sistema d'emmagatzematge temporal mitjançant **localStorage**.
+
 
