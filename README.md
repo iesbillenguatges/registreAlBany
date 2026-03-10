@@ -151,15 +151,12 @@ Exemple generat:
 Per inserir el registre dins del document es reemplaça el tancament de l'arrel.
 
 xml = xml.replace("</registres>", registre + "\n</registres>");
-
+```
 Resultat:
-
 <registres>
-
-`  `<registre>...</registre>
-
+  <registre>...</registre>
 </registres>
-
+```
 # **7. Guardar en localStorage**
 El XML es guarda al navegador:
 
@@ -235,6 +232,7 @@ Es podria ampliar amb:
 
 # **Conclusió**
 Aquesta aplicació és un exemple senzill de **generació i manipulació de XML des d'una aplicació web amb JavaScript**, utilitzant el navegador com a sistema d'emmagatzematge temporal mitjançant **localStorage**.
+
 
 
 
