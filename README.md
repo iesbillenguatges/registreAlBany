@@ -131,32 +131,22 @@ data = 2026-03-10
 hora = 11:42:15
 ```
 ## **5.3 Crear el registre XML**
+```
 let registre = `
-
-`  `<registre>
-
-`    `<nia>${nia}</nia>
-
-`    `<data>${data}</data>
-
-`    `<hora>${hora}</hora>
-
-`  `</registre>
-
+  <registre>
+    <nia>${nia}</nia>
+    <data>${data}</data>
+    <hora>${hora}</hora>
+  </registre>
 `;
 
 Exemple generat:
-
 <registre>
-
-`  `<nia>12345678</nia>
-
-`  `<data>2026-03-10</data>
-
-`  `<hora>11:42:15</hora>
-
+  <nia>12345678</nia>
+  <data>2026-03-10</data>
+  <hora>11:42:15</hora>
 </registre>
-
+```
 # **6. Afegir el registre al XML**
 Per inserir el registre dins del document es reemplaça el tancament de l'arrel.
 
@@ -245,5 +235,6 @@ Es podria ampliar amb:
 
 # **Conclusió**
 Aquesta aplicació és un exemple senzill de **generació i manipulació de XML des d'una aplicació web amb JavaScript**, utilitzant el navegador com a sistema d'emmagatzematge temporal mitjançant **localStorage**.
+
 
 
