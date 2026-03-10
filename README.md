@@ -172,7 +172,7 @@ els registres **no es perden**.
 # **8. Mostrar el XML en pantalla**
 document.getElementById("xmlOutput").textContent = xml;
 
-S'utilitza <pre> perquè es mantinga el format del XML.
+S'utilitza &lt;pre&gt; perquè es mantinga el format del XML.
 
 # **9. Descarregar el fitxer XML**
 El botó **Descarregar XML** crea un fitxer:
@@ -232,6 +232,7 @@ Es podria ampliar amb:
 
 # **Conclusió**
 Aquesta aplicació és un exemple senzill de **generació i manipulació de XML des d'una aplicació web amb JavaScript**, utilitzant el navegador com a sistema d'emmagatzematge temporal mitjançant **localStorage**.
+
 
 
 
